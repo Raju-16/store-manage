@@ -3,20 +3,23 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllProduct } from "../Redux/action";
 import styles from "../Styles/Home.module.css";
 import Category from "../Components/Category";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import ProductItem from "./ProductItem";
 
 const Home = () => {
   const products = useSelector((state) => state.products);
+  const [searchParams, setSearchParams] = useSearchParams();
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // if (products.length === 0) {
-    dispatch(getAllProduct());
-    // }
-  }, [dispatch]);
-
-  // console.log("products", products);
+    const queryParam = {
+      param: {
+        category: searchParams.get("category"),
+      },
+    };
+    console.log("Query", queryParam);
+    dispatch(getAllProduct(queryParam.param));
+  }, [dispatch, searchParams]);
 
   return (
     <div className={styles.mainbox}>

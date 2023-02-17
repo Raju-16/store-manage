@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../Styles/Home.module.css";
-
-const handleChange = (e) => {
-  console.log(e.target.value);
-};
+import { useSearchParams } from "react-router-dom";
 
 const Category = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [selCategory, setSelCategory] = useState("");
+
+  const handleChange = (e) => {
+    setSelCategory(e.target.value);
+  };
+
+  useEffect(() => {
+    console.log("i am in useEffect");
+    if (selCategory) {
+      let param = {};
+      selCategory && (param.category = selCategory);
+      setSearchParams(param);
+    }
+  }, [setSearchParams, selCategory]);
+
   return (
     <div className={styles.category_container}>
       <h2>Filter by Category</h2>

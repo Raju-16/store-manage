@@ -1,10 +1,12 @@
 import axios from "axios";
 import * as types from "./actionTypes";
 
-export const getAllProduct = () => (dispatch) => {
+export const getAllProduct = (params) => (dispatch) => {
   dispatch({ type: types.GET_ALL_PRODUCT_REQUEST });
   return axios
-    .get("https://fakestoreapi.com/products")
+    .get(`https://fakestoreapi.com/products/category/${params.category}`, {
+      params,
+    })
     .then((res) => {
       dispatch({ type: types.GET_ALL_PRODUCT_SUCCESS, payload: res.data });
       return types.GET_ALL_PRODUCT_SUCCESS;
@@ -20,7 +22,7 @@ export const getProductById = (id) => (dispatch) => {
   return axios
     .get(`https://fakestoreapi.com/products/${id}`)
     .then((res) => {
-    //   console.log("RES", res);
+      //   console.log("RES", res);
       dispatch({ type: types.GET_PRODUCTBYID_SUCCESS, payload: res.data });
       return types.GET_PRODUCTBYID_SUCCESS;
     })
