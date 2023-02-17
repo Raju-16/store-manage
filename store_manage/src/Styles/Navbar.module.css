@@ -1,0 +1,18 @@
+.navItems {
+  list-style: none;
+  display: flex;
+  background: teal;
+  padding: 16px;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+}
+
+.navItems li {
+  margin: 0px 40px;
+}
+
+.navItems li a {
+  text-decoration: none;
+  color: white;
+}
