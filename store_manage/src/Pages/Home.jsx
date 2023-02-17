@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllProduct } from "../Redux/action";
+import { getAllProduct, getFilterProduct } from "../Redux/action";
 import styles from "../Styles/Home.module.css";
 import Category from "../Components/Category";
 import { Link, useSearchParams } from "react-router-dom";
@@ -18,7 +18,11 @@ const Home = () => {
       },
     };
     console.log("Query", queryParam);
-    dispatch(getAllProduct(queryParam.param));
+    if (queryParam.param.category) {
+      dispatch(getFilterProduct(queryParam.param));
+    } else {
+      dispatch(getAllProduct());
+    }
   }, [dispatch, searchParams]);
 
   return (
