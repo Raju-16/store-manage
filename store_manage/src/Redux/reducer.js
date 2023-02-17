@@ -26,6 +26,24 @@ export const reducer = (state = initialState, action) => {
         ...state,
         isError: true,
       };
+
+    case types.GET_PRODUCTBYID_REQUEST:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case types.GET_PRODUCTBYID_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        products: payload,
+      };
+    case types.GET_PRODUCTBYID_FAILURE:
+      return {
+        ...state,
+        isError: true,
+      };
+
     default:
       return state;
   }

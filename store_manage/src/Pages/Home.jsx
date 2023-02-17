@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllProduct } from "../Redux/action";
 import styles from "../Styles/Home.module.css";
 import Category from "../Components/Category";
-import ProductDetail from "./ProductDetail";
 import { Link } from "react-router-dom";
+import ProductItem from "./ProductItem";
 
 const Home = () => {
   const products = useSelector((state) => state.products);
@@ -26,14 +26,13 @@ const Home = () => {
       <div className={styles.container2}>
         {products.length > 0 &&
           products.map((item) => {
-            // console.log("HOme item", item);
             return (
               <Link
                 to={`/productdetail/${item.id}`}
                 className={styles.products}
                 key={item.id}
               >
-                <ProductDetail item={item} />
+                <ProductItem item={item} />
               </Link>
             );
           })}

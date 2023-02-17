@@ -1,18 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "../Styles/Home.module.css";
+import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getProductById } from "../Redux/action";
 
-const ProductDetail = ({ item }) => {
-  console.log("item", item);
+const ProductDetail = () => {
+  const selectedProduct = useSelector((state) => state.products);
+  const { id } = useParams();
+  const dispatch = useDispatch();
+
+  console.log("selectedProduct", selectedProduct);
+
+  useEffect(() => {
+    if (id) {
+      console.log("kuch bhi");
+      dispatch(getProductById(id));
+    }
+  }, []);
+
   return (
     <div>
-      <img className={styles.image} src={item.image} alt="" />
-      <h3>{item.title}</h3>
-      <h4>₹ {item.price}</h4>
+      <img className={styles.image} src={selectedProduct.image} alt="" />
+      <h3>{selectedProduct.title}</h3>
+      <h4>₹ {selectedProduct.price}</h4>
       <div className={styles.category}>
-        <p>{item.category}</p>
+        <p>{selectedProduct.category}</p>
         <div className={styles.rating}>
-          <p>⭐{item.rating.rate}</p>
-          <p>Ratings {item.rating.count}</p>
+          <p>⭐{selectedProduct.rating.rate}</p>
+          <p>Ratings {selectedProduct.rating.count}</p>
         </div>
       </div>
     </div>
