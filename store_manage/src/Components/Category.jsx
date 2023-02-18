@@ -11,7 +11,6 @@ const Category = () => {
   };
 
   useEffect(() => {
-    console.log("i am in useEffect");
     if (selCategory) {
       let param = {};
       selCategory && (param.category = selCategory);
@@ -52,7 +51,7 @@ const Category = () => {
           name="drone"
           value="electronics"
         />
-        <label htmlFor="electronics">Louie</label>
+        <label htmlFor="electronics">Electornics</label>
       </div>
 
       <div className={styles.radio}>

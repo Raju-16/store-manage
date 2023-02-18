@@ -64,3 +64,51 @@
   margin-top: 8px;
   font-size: 18px;
 }
+
+.checkoutPage {
+  display: flex;
+  justify-content: space-between;
+  max-width: 70%;
+  border: 1px solid gray;
+  border-radius: 6px;
+  padding: 20px 30px;
+  margin: 30px auto;
+}
+
+.imageDiv {
+  max-width: 40%;
+}
+
+.detailDiv {
+  max-width: 60%;
+}
+
+.detailDiv h3,
+h4 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.total {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.qunt {
+  display: flex;
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+.qunt button {
+  width: 40px;
+  height: 25px;
+  margin: 2px 8px;
+  /* padding: 5px 15px; */
+}
+
+.checkoutBtn {
+  font-size: 18px;
+}

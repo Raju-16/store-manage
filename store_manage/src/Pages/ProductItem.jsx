@@ -2,7 +2,6 @@ import React from "react";
 import styles from "../Styles/Home.module.css";
 
 const ProductItem = ({ item }) => {
-  console.log(item, "item");
   return (
     <div>
       <img className={styles.image} src={item.image} alt="" />

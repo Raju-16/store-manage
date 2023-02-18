@@ -36,7 +36,6 @@ export const getProductById = (id) => (dispatch) => {
   return axios
     .get(`https://fakestoreapi.com/products/${id}`)
     .then((res) => {
-      //   console.log("RES", res);
       dispatch({ type: types.GET_PRODUCTBYID_SUCCESS, payload: res.data });
       return types.GET_PRODUCTBYID_SUCCESS;
     })
@@ -44,4 +43,37 @@ export const getProductById = (id) => (dispatch) => {
       dispatch({ type: types.GET_PRODUCTBYID_FAILURE });
       return types.GET_PRODUCTBYID_FAILURE;
     });
+};
+
+export const addToCart = (id, quantity) => (dispatch) => {
+  dispatch({ type: types.GET_ADDTOCART_REQUEST });
+  return axios
+    .get(`https://fakestoreapi.com/products/${id}`)
+    .then((res) => {
+      dispatch({
+        type: types.GET_ADDTOCART_SUCCESS,
+        payload: { ...res.data, quantity },
+      });
+      return types.GET_ADDTOCART_SUCCESS;
+    })
+    .catch((err) => {
+      dispatch({ type: types.GET_ADDTOCART_FAILURE });
+      return types.GET_ADDTOCART_FAILURE;
+    });
+};
+
+export const addOne = (ele) => (dispatch) => {
+  return dispatch({ type: types.ADD_ONE, payload: ele });
+};
+
+export const removeOne = () => (dispatch) => {
+  return dispatch({ type: types.REMOVE_ONE });
+};
+
+export const quantity = (quantity) => (dispatch) => {
+  return dispatch({ type: types.QUANTITY, payload: quantity });
+};
+
+export const removeProduct = (id) => (dispatch) => {
+  return dispatch({ type: types.DELETE_PRODUCT, payload: id });
 };

@@ -17,7 +17,6 @@ const Home = () => {
         category: searchParams.get("category"),
       },
     };
-    console.log("Query", queryParam);
     if (queryParam.param.category) {
       dispatch(getFilterProduct(queryParam.param));
     } else {
