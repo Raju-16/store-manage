@@ -18,18 +18,22 @@ The following is the tech stack I used to build this website:-
 
 
 ## Home Page :
+![Home](https://user-images.githubusercontent.com/96100591/219877021-c47df1f9-1918-4645-85ab-e68a23a43561.PNG)
 
-Landing view without entering any number by user.
-![Home_Page](https://github.com/swatibersurda/Dish-Polling-App/blob/main/syook/src/images/image1R.PNG?raw=true)
+## Product Detial :
+![productDetail](https://user-images.githubusercontent.com/96100591/219877119-a175f403-70dd-4075-95c4-96c719df3a47.PNG)
 
-## User will enter two number for addition
+## Checkout Page :
+![checkout](https://user-images.githubusercontent.com/96100591/219877144-c405d70d-dd16-4c96-8c48-031418b24ffc.PNG)
 
+## Order Page : 
+![order](https://user-images.githubusercontent.com/96100591/219877180-2257a318-6551-40bc-a48e-74370cc66f32.PNG)
 
-After entering two numbers click on Genrate Steps button.
+## Alert Page :
+![alert](https://user-images.githubusercontent.com/96100591/219877235-9ff8bacb-c29c-4148-a6bb-280f09d42500.PNG)
 
-
-![Home_Page_Steps_Genrated_View](https://github.com/swatibersurda/Dish-Polling-App/blob/main/syook/src/images/eqimm3.PNG?raw=true)
-
+## About Page :
+![about](https://user-images.githubusercontent.com/96100591/219877262-b8ac521b-c816-4166-8e9f-62e9ed471db9.PNG)
 
 
 ## Usage :
