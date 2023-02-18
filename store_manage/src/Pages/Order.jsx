@@ -10,7 +10,7 @@ const Order = () => {
   const hanldeOnConfirm = () => {
     alert(`Your Order is Confirmed 
   You will get your product after 5 days`);
-    navigate("/", { replace: true });
+    navigate("/about", { replace: true });
   };
 
   return (
