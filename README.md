@@ -50,4 +50,4 @@ The following is the tech stack I used to build this website:-
 
 
 ## Store App :
- https://github.com/swatibersurda/eqimm.git
+https://github.com/Raju-16/store-manage.git
